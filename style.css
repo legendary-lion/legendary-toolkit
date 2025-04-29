@@ -1490,6 +1490,10 @@ body:not(.theme-preset-active) footer#colophon {
 }
 
 #footer_columns a {
+  color: var(--footer_link_color);
+}
+
+#footer_columns a {
   transition: .45s ease all;
   display: inline-block;
   opacity: 1;
