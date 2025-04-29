@@ -247,6 +247,8 @@ function legendary_toolkit_theme_options_css() {
     $blog_header_content_color    = (array_key_exists('blog_header_content_color', $theme_options) && $theme_options['blog_header_content_color']) ? $theme_options['blog_header_content_color'] : 'var(--body_font_color, #444444)';
     $footer_background            = (array_key_exists('footer_background', $theme_options) && $theme_options['footer_background']) ? $theme_options['footer_background'] : '#111111';
     $footer_content_color         = (array_key_exists('footer_content_color', $theme_options) && $theme_options['footer_content_color']) ? $theme_options['footer_content_color'] : '#ffffff';
+    $footer_link_color            = (array_key_exists('footer_link_color', $theme_options) && $theme_options['footer_link_color']) ? $theme_options['footer_link_color'] : '#ffffff';
+    $footer_link_hover_color      = (array_key_exists('footer_link_hover_color', $theme_options) && $theme_options['footer_link_hover_color']) ? $theme_options['footer_link_hover_color'] : 'black';
     $copyright_background         = (array_key_exists('copyright_background', $theme_options) && $theme_options['copyright_background']) ? $theme_options['copyright_background'] : 'black';
     $copyright_content_color      = (array_key_exists('copyright_content_color', $theme_options) && $theme_options['copyright_content_color']) ? $theme_options['copyright_content_color'] : '#ffffff';
 
@@ -353,6 +355,8 @@ function legendary_toolkit_theme_options_css() {
             --menu_item_padding : $menu_item_padding"."px;
             --footer_background : $footer_background;
             --footer_content_color : $footer_content_color;
+            --footer_link_color : $footer_link_color;
+            --footer_link_hover_color : $footer_link_hover_color;
             --copyright_background : $copyright_background;
             --copyright_content_color : $copyright_content_color;
             --blog_header_background : $blog_header_background;
