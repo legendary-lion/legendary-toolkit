@@ -1486,7 +1486,11 @@ body:not(.theme-preset-active) footer#colophon {
 }
 
 .copyright a, footer#colophon a {
-  color: inherit;
+  color: var(--footer_link_color);
+}
+
+#footer_columns a {
+  color: var(--footer_link_color);
 }
 
 #footer_columns a {
@@ -1502,7 +1506,7 @@ body:not(.theme-preset-active) footer#colophon {
   -ms-transform: translateX(6px);
   -o-transform: translateX(6px);
   transform: translateX(6px);
-  color: var(--primary_color);
+  color: var(--footer_link_hover_color);
 }
 
 #footer_columns {

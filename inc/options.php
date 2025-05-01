@@ -633,6 +633,20 @@ if ( ! class_exists( 'Legendary_Toolkit_Theme_Options' ) ) {
                                 </td>
                             </tr>
                             <tr valign="top">
+                                <th scope="row"><?php esc_html_e( 'Footer Link Color', 'legendary-toolkit' );?></th>
+                                <td>
+                                    <?php $value = self::get_theme_option( 'footer_link_color' );?>
+                                    <input class="color-field" type="text" name="theme_options[footer_link_color]" value="<?=esc_attr( $value );?>">
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <th scope="row"><?php esc_html_e( 'Footer Link Hover Color', 'legendary-toolkit' );?></th>
+                                <td>
+                                    <?php $value = self::get_theme_option( 'footer_link_hover_color' );?>
+                                    <input class="color-field" type="text" name="theme_options[footer_link_hover_color]" value="<?=esc_attr( $value );?>">
+                                </td>
+                            </tr>
+                            <tr valign="top">
                                 <th scope="row"><?php esc_html_e( 'Copyright Background', 'legendary-toolkit' );?></th>
                                 <td>
                                     <?php $value = self::get_theme_option( 'copyright_background' );?>
