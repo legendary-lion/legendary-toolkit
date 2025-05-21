@@ -208,6 +208,7 @@ if ( ! class_exists( 'Legendary_Toolkit_Theme_Options' ) ) {
             ?>
             <table data-type="<?=$id;?>" class="inner-form-table">
                 <tr valign="top">
+                    <?php if ($id !== 'links') : ?>
                     <td>
                         <div class="legendary-toolkit-input-group">
                             <?php $value = self::get_theme_option( $id . '_font_family' );?>
@@ -229,10 +230,18 @@ if ( ! class_exists( 'Legendary_Toolkit_Theme_Options' ) ) {
                             <select data-type="<?=$id;?>" data-selected="<?=esc_attr( $value );?>" name="theme_options[<?=$id;?>_font_weight]" class="font-selector-weight"></select>
                         </div>
                     </td>
+                    <?php endif; ?>
                     <?php if ($has_color) : ?>
                         <td>
                             <?php $value = self::get_theme_option( $id . '_font_color' );?>
                             <input class="color-field" type="text" name="theme_options[<?=$id;?>_font_color]" value="<?=esc_attr( $value );?>">
+                        </td>
+                    <?php endif;?>
+                    <?php if ($id === 'links') : ?>
+                        <td>
+                            <?php $hover_value = self::get_theme_option( $id . '_hover_color');?>
+                            <label class="prefix" for="theme_options [<?$id;?>_hover_color]">Hover Color: </label>
+                            <input class="color-field" type="text" name="theme_options[<?=$id;?>_hover_color]" value="<?=esc_attr( $hover_value );?>">
                         </td>
                     <?php endif;?>
                     <td>
@@ -801,6 +810,10 @@ if ( ! class_exists( 'Legendary_Toolkit_Theme_Options' ) ) {
                             <tr valign="top">
                                 <th scope="row"><?php esc_html_e( 'Heading 6', 'legendary-toolkit' );?></th>
                                 <td><?php echo self::typography_field('h6', true, true);?></td>
+                            </tr>
+                            <tr valign="top">
+                                <th scope="row"><?php esc_html_e( 'Links', 'legendary-toolkit' );?></th>
+                                <td><?php echo self::typography_field('links', false, false, true);?></td>
                             </tr>
                         </table>
                     </div>
