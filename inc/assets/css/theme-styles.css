@@ -76,6 +76,14 @@ h6 {
     font-size: var(--h6_font_size, 14px);
 }
 
+a {
+    color: var(--links_font_color);
+}
+a:hover,
+a:focus {
+    color: var(--links_hover_color);
+}
+
 #main-nav>ul.navbar-nav>li>a:not(.btn),
 body:not(.theme-preset-active) #masthead .navbar-nav>li>a:not(.btn),
 body:not(.theme-preset-active) #masthead .navbar-nav>li>a:not(.btn):hover,
@@ -318,7 +326,7 @@ slide-drawer::shadow .tkmm-toggle:not(.close) span {
 }
 
 a {
-    color: var(--primary_color);
+    color: var(--links_font_color, var(--primary_color));
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -330,7 +338,7 @@ a {
     margin-right: 15px;
 }
 a:hover {
-    color: var(--primary_color);
+    color: var(--links_hover_color, var(--primary_color));
     text-decoration: none;
     opacity: .8;
 }

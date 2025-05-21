@@ -326,6 +326,7 @@ function legendary_toolkit_theme_options_css() {
             $font_size = get_saved_font_size($id . '_font_size', $options);
             $font_size_mobile = get_saved_font_size($id . '_font_size_mobile', $options);
             $font_transform = get_saved_font_transform($id . '_font_transform', $options);
+            $hover_color = ($id === 'links' && isset($options[$id . '_hover_color'])) ? $options[$id . '_hover_color'] : '';
             $spacer = "            ";
             $style_return = "";
             $style_return .= ($font_family) ?  "--".$id."_font_family : ".$font_family.";\n"  : '';
@@ -335,6 +336,7 @@ function legendary_toolkit_theme_options_css() {
             $style_return .= ($font_size) ? $spacer . "--".$id."_font_size : ".$font_size.";\n" : '';
             $style_return .= ($font_size_mobile) ? $spacer . "--".$id."_font_size_mobile : ".$font_size_mobile.";\n" : '';
             $style_return .= ($font_transform) ? $spacer . "--".$id."_font_transform : ".$font_transform.";\n" : '';
+            $style_return .= ($hover_color) ? $spacer . "--{$id}_hover_color: {$hover_color};\n" : '';
 
             return $style_return;
         }
@@ -377,6 +379,7 @@ function legendary_toolkit_theme_options_css() {
             " . define_font_variables('h6', $theme_options) . " 
             " . define_font_variables('menu_items', $theme_options) . "
             " . define_font_variables('btn', $theme_options) . "
+            " . define_font_variables('links', $theme_options) . "
         }
         @media all and (max-width: $mobile_menu_breakpoint) {
             #main-nav {
