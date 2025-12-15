@@ -362,7 +362,6 @@ function legendary_toolkit_theme_options_css() {
             --blog_header_background : $blog_header_background;
             --blog_header_content_color: $blog_header_content_color;
             --maintenance_mode_background : $maintenance_mode_background_url;
-            --favicon_url : $favicon_url;
             --btn_border_width: $btn_border_width;
             --btn_border_radius: $btn_border_radius;
             --page_container_width : $page_container_width"."px;
@@ -426,6 +425,20 @@ function my_login_logo() {
     <?php 
 }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+//Favicon implementation
+function legendary_toolkit_favicon_tag() {
+    $theme_options = legendary_toolkit_get_theme_options();
+    $favicon_id = isset($theme_options['favicon']) ? $theme_options['favicon'] : '';
+    $favicon_url = $favicon_id ? esc_url(wp_get_attachment_url($favicon_id)) : '';
+
+    if ($favicon_url) {
+        ?>
+        <link rel="icon" href="<?php echo $favicon_url; ?>" type="image/png" sizes="512x512">
+        <?php
+    }
+}
+add_action('wp_head', 'legendary_toolkit_favicon_tag');
 
 /**
  * Add Preload for CDN scripts and stylesheet

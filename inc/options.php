@@ -364,6 +364,7 @@ if ( ! class_exists( 'Legendary_Toolkit_Theme_Options' ) ) {
                             <tr valign="top">
                                 <th scope="row"><?php esc_html_e( 'Favicon', 'legendary-toolkit' );?></th>
                                 <td>
+                                    <p>Please ensure the favicon logo is a 512px x 512px image in PNG format</p>
                                     <?php $value = self::get_theme_option( 'favicon' ); ?>
                                     <input type="hidden" name="theme_options[favicon]" id="favicon" value="<?php echo $value; ?>" />
                                     <div id="favicon_preview" class="favicon btn_favicon toolkit-media-upload" style="background-image:url(<?php echo wp_get_attachment_image_url($value, 'medium'); ?>)" ></div>
